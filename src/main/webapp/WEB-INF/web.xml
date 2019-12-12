@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ClientController</servlet-name>
+  	<display-name>ClientController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.ClientController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddClient</servlet-name>
+  	<display-name>AddClient</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.AddClient</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CompteController</servlet-name>
+  	<display-name>CompteController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.CompteController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AccessCompte</servlet-name>
+  	<display-name>AccessCompte</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.AccessCompte</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListeClient</servlet-name>
+  	<display-name>ListeClient</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.ListeClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ClientController</servlet-name>
+  	<url-pattern>/ClientController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddClient</servlet-name>
+  	<url-pattern>/AddClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CompteController</servlet-name>
+  	<url-pattern>/CompteController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AccessCompte</servlet-name>
+  	<url-pattern>/AccessCompte</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListeClient</servlet-name>
+  	<url-pattern>/ListeClient</url-pattern>
+  </servlet-mapping>
+</web-app>

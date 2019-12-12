@@ -1,0 +1,12 @@
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/configurationsDB/BDD.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/controllers/ClientController.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/controllers/CrunchifyMySQLDBTutorial.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/dao/IntCompteDao.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/dao/InterfaceClient.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/controllers/CompteController.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/beans/Client.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/beans/Nature.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/dao/CompteImpl.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/dao/ClientImpl.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/configurationsDB/DatabaseConnection.java
+/home/chiheb/eclipse-workspace/BanqueApplication/src/main/java/com/banque/beans/Compte.java
