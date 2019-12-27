@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.banque.beans.Client;
 import com.banque.beans.Compte;
 
 import configurationsDB.BDD;
@@ -53,13 +54,59 @@ public class CompteImpl implements IntCompteDao {
 	}
 
 	public Compte getCompteByNumero(long c) throws ClassNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		String[] nomTAbleau = {"numCpt" ,"codNatCpt" , "solde" , "codClt"};
+		try {
+			rs=bdd.fcSelectComand(nomTAbleau, "comptes","numCpt = '"+c+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Compte cpt = new Compte();
+		try {
+			while (rs.next()) {
+				cpt.setCodclt(rs.getString("codClt"));
+				cpt.setCodNatCpt(rs.getInt("codNatCpt"));
+				cpt.setSolde(rs.getDouble("solde"));
+				cpt.setNumCpt(rs.getLong("numCpt"));
+	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cpt ;
+		
 	}
 
 	public void deleteCompte(long id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean getComptebyNatureAndNum(long nat, long num) {
+		String[] nomTAbleau = {"numCpt" ,"codNatCpt" , "solde" , "codClt"};
+		try {
+			rs=bdd.fcSelectComand(nomTAbleau, "comptes","numCpt = '"+num+"' and codNatCpt ='"+nat+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Compte cpt = new Compte();
+		try {
+			while (rs.next()) {
+				cpt.setCodclt(rs.getString("codClt"));
+				cpt.setCodNatCpt(rs.getInt("codNatCpt"));
+				cpt.setSolde(rs.getDouble("solde"));
+				cpt.setNumCpt(rs.getLong("numCpt"));
+	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return cpt.getNumCpt()!=0;
 	}
 
 }

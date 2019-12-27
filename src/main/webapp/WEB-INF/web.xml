@@ -34,6 +34,24 @@
   	<description></description>
   	<servlet-class>com.banque.controllers.ListeClient</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.LoginController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VersementController</servlet-name>
+  	<display-name>VersementController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.VersementController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RetraitController</servlet-name>
+  	<display-name>RetraitController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.RetraitController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ClientController</servlet-name>
   	<url-pattern>/ClientController</url-pattern>
@@ -53,5 +71,17 @@
   <servlet-mapping>
   	<servlet-name>ListeClient</servlet-name>
   	<url-pattern>/ListeClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VersementController</servlet-name>
+  	<url-pattern>/VersementController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RetraitController</servlet-name>
+  	<url-pattern>/RetraitController</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -22,6 +22,24 @@
   	<description></description>
   	<servlet-class>com.banque.controllers.CompteController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AccessCompte</servlet-name>
+  	<display-name>AccessCompte</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.AccessCompte</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListeClient</servlet-name>
+  	<display-name>ListeClient</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.ListeClient</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.LoginController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ClientController</servlet-name>
   	<url-pattern>/ClientController</url-pattern>
@@ -33,5 +51,17 @@
   <servlet-mapping>
   	<servlet-name>CompteController</servlet-name>
   	<url-pattern>/CompteController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AccessCompte</servlet-name>
+  	<url-pattern>/AccessCompte</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListeClient</servlet-name>
+  	<url-pattern>/ListeClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
 </web-app>

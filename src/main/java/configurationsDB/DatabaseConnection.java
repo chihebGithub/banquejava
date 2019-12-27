@@ -3,7 +3,6 @@ package configurationsDB;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 
 import java.sql.DriverManager;
 
@@ -21,7 +20,7 @@ public class DatabaseConnection {
             this.connection = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());
-        }catch(CommunicationsException e) {
+        }catch(SQLException  e) {
         	System.out.println("SLV demarer votre SGBD");
         }
     }
@@ -30,9 +29,8 @@ public class DatabaseConnection {
         return connection;
     }
 
-    public static DatabaseConnection getInstance() throws SQLException {
-     
-    	if (instance == null) {
+    public static synchronized DatabaseConnection getInstance() throws SQLException {
+     	if (instance == null) {
             instance = new DatabaseConnection();
         } else if (instance.getConnection().isClosed()) {
             instance = new DatabaseConnection();

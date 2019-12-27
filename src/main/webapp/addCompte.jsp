@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<script src="./jquery-3.4.1.min.js" ></script>
+<script src="./js/jquery-3.4.1.min.js" ></script>
 <meta charset="UTF-8">
 <title>Add Compte</title>
 <script>

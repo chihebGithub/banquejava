@@ -10,7 +10,11 @@ public class BDD {
 	String  SQL;
 	
 	public void connexionDatabase() throws SQLException{
+		try {
 		this.connection= DatabaseConnection.getInstance().getConnection();
+		}catch(SQLException e ) {
+			e.getMessage();
+		}
 		}
 	public Connection closeconnexion(){
 		
@@ -18,7 +22,7 @@ public class BDD {
 			connection.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return connection;
 	}

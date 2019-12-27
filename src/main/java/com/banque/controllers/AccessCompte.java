@@ -41,7 +41,7 @@ public class AccessCompte extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cin =request.getParameter("cin");;
-		System.out.println(cin);
+		request.setAttribute("err","err");
 		if (cin!=(null) ) {
 			
 			Compte c = new Compte();
@@ -49,6 +49,7 @@ public class AccessCompte extends HttpServlet {
 			c.setCodclt(cin);
 			c.setSolde(0);
 			cpt.addCompte(c);
+			request.setAttribute("bean",c);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/comptesucces.jsp");
 		dispatcher.forward( request, response);
 		}

@@ -14,7 +14,7 @@ Client bean=(Client)request.getAttribute("bean");
 <tr><td>Email:</td><td><%= bean.getEmail() %> </td></tr>  
 <tr><td>Sex:</td><td><%= bean.getSex() %> </td></tr>  
 <tr><td>Country:</td><td><%= bean.getCountry() %> </td></tr>  
-<tr><td>Adress:</td><td><%= bean.getAdress() %> </td></tr>  
+<tr><td>password:</td><td><%= bean.getPassword() %> </td></tr>  
 
 </table>
   

@@ -5,7 +5,7 @@ public class Client {
 	private String codClt ;
 	private String name;
 	private String firstName;
-	private String adress;
+	private String password;
 	private String Email;
 	private String Sex;
 	private String Country;
@@ -28,23 +28,18 @@ public class Client {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getAdress() {
-		return adress;
-	}
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
+	
 	
 	
 	public Client() {
 		super();
 	}
-	public Client(String codClt, String name, String firstName, String adress) {
+	public Client(String codClt, String name, String firstName, String password) {
 		super();
 		this.codClt = codClt;
 		this.name = name;
 		this.firstName = firstName;
-		this.adress = adress;
+		this.password = password;
 		
 	}
 	public String getEmail() {
@@ -64,6 +59,12 @@ public class Client {
 	}
 	public void setSex(String sex) {
 		Sex = sex;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	
