@@ -24,7 +24,7 @@ public class CompteImpl implements IntCompteDao {
 				 c.setNumCpt(rs.getInt(1));
 				 c.setCodNatCpt(rs.getInt("codNatCpt"));
 				 c.setCodclt(rs.getString("codclt"));
-				//System.out.println(rs.getInt(1));
+				c.setSolde(rs.getDouble("solde"));
 				l.add(c);
 			
 			}

@@ -52,6 +52,12 @@
   	<description></description>
   	<servlet-class>com.banque.controllers.RetraitController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ListeCompte</servlet-name>
+  	<display-name>ListeCompte</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.ListeCompte</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ClientController</servlet-name>
   	<url-pattern>/ClientController</url-pattern>
@@ -83,5 +89,9 @@
   <servlet-mapping>
   	<servlet-name>RetraitController</servlet-name>
   	<url-pattern>/RetraitController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListeCompte</servlet-name>
+  	<url-pattern>/ListeCompte</url-pattern>
   </servlet-mapping>
 </web-app>

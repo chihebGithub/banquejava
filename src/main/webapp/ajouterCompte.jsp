@@ -75,6 +75,7 @@ if(login==null){response.sendRedirect("login.jsp");  }
 					
                        <a href="Retrait.jsp" class="btn btn-link">Retrait</a>
                         <a href="Virement.jsp" class="btn btn-link">Virement</a>
+                        <a href="ListeCompte" class="btn btn-link">Lister les Comptes</a>
 					</div>
 				</div>
 				<div class="card bg-light mb-3" style="max-width: 18rem;">
