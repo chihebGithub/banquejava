@@ -27,7 +27,8 @@
 							<div class="col-lg-12">
 								<form id="login-form" action="LoginController" method="get" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" required="required" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="email" name="emailname" id="emailname" required="required" tabindex="1" class="form-control" placeholder="Username" value="">
+									      <p hidden="true" id="erremail" class="d-none">This paragraph should be hidden.</p>
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" required="required" tabindex="2" class="form-control" placeholder="Password">
@@ -66,15 +67,18 @@
 									     <input class="form-control" type="text" name="lastname" required="required" style="margin-left:12px" id="lastname" tabindex="1" placeholder="last name" value="">
 								 	</div>
 									</div>
-										<div class="form-group">
-										<input type="text" name="cin" id="cin" tabindex="1" required="required" class="form-control" placeholder="numero carte identité" value="" />
-									  <p hidden="true" id="errCin" class="d-none">This paragraph should be hidden.</p>
+									<div class="form-group">
+										<input type="text" name="cin" id="cin" tabindex="1"
+											required="required" class="form-control"
+											placeholder="numero carte identité" value="" />
+
 									</div>
-									
+									<p hidden="true" id="errCin" class="d-none">This paragraph should be hidden.</p>
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" required="required" class="form-control form-control-sm" placeholder="Email Address" value="">
+									     <p hidden="true" id="errexist" class="d-none">This paragraph should be hidden.</p>
 									</div>
-
+ 
 									<div class="form-group  form-control">
 										<label for="sex" class="col-sm-2 col-form-label">Sex:</label>
 										<div class="col-sm-10">
@@ -96,7 +100,7 @@
 									</div>
 
 									<div class="form-group">
-										<input type="password" name="password" required="required" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="password" required="required" id="passwordRegister" tabindex="2" class="form-control" placeholder="Password">
 									</div>
 								
 									<div class="form-group">
@@ -115,6 +119,7 @@
         </div>
         </div>
         <script>
+        
         $(document).ready(function () {
         	  //called when key is pressed in textbox
         	  $("#cin").keypress(function (e) {
@@ -122,7 +127,10 @@
         	     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
         	               return false;
         	    }
+        	     
         	   });
+        	  
+        	  
         	  
         	  $("#cin").blur(function () {
          	     //if the letter is not digit then display error and don't type anything
@@ -158,7 +166,53 @@
          	    
          	   });
         	  
-        		
+        	  $("#emailname").blur(function () {
+          	 	$.ajax({
+     				url : '/BanqueApplication/CompteController',
+     				type:'POST',
+     				dataType: "json",
+     			    data :{email : $("#emailname").val()},
+     				success : function(responseText) {
+     					
+     					if(responseText.erremail!=null)
+     					{ $("#erremail").text(responseText.erremail).show().css("color","red");
+     					 $("#emailname").focus();
+     					}
+     					if(responseText.erremail==null)
+     					{ $("#erremail").hide();
+     					// $("#emailname").focus();
+     					}
+     			
+     					
+     				}
+     				
+     			});
+     			
+          	   });//fin email
+          	 
+        	  $("#email").blur(function () {
+            	 	$.ajax({
+       				url : '/BanqueApplication/CompteController',
+       				type:'POST',
+       				dataType: "json",
+       			    data :{email : $("#email").val()},
+       				success : function(responseText) {
+       					//console.log(responseText)
+       					if(responseText.errexist!=null)
+       					{ $("#errexist").text(responseText.errexist).show().css("color","red");
+       					 $("#email").focus();
+       					}
+       					if(responseText.errexist==null)
+       					{ $("#errexist").hide();
+       					// $("#emailname").focus();
+       					}
+       			
+       					
+       				}
+       				
+       			});
+       			
+            	   });
         		
         			
  
