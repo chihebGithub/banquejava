@@ -76,6 +76,7 @@ public class ClientController extends HttpServlet {
 		ServletContext context = getServletContext();
 		 HttpSession session = request.getSession();
 		 session.setAttribute("uname",request.getParameter("email"));
+		 session.setAttribute("cin",request.getParameter("cin"));
 		 System.out.println(request.getParameter("email"));
 		context.setAttribute("message", request.getParameter("firstname") +" "+ request.getParameter("lastname") );
 		Client C = new Client();

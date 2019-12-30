@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.banque.beans.Client;
 import com.banque.beans.Compte;
@@ -109,4 +110,55 @@ public class CompteImpl implements IntCompteDao {
 		return cpt.getNumCpt()!=0;
 	}
 
+	@Override
+	public long getNumCompte() {
+	
+		try {
+			rs=bdd.executionQuery("SELECT MAX(numCpt)as max FROM comptes");
+			if(rs.next()) return rs.getLong("max");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public List<Compte> getAllComptesParCLient(long cin) {
+		List<Compte> liste = getAllComptes();
+		System.out.println(liste);
+		//System.out.println(liste.get(1).getNumCpt());
+		List<Compte> filtered =
+				liste
+			        .stream()
+			        .filter(p -> Long.parseLong(p.getCodclt())== cin)
+			        .collect(Collectors.toList());
+		System.out.println(filtered);
+		return filtered;
+	}
+
+	@Override
+	public int virement(Compte C1, Compte C2, double montant) throws SQLException {
+	   
+	/*if(!C1.getCodclt().equals(C2.getCodclt())){
+		return -1;
+	}else if(C1.getSolde()-montant<0) {
+		return -2;
+	}
+	else {
+		C1.setSolde(C1.getSolde()-montant);
+		C2.setSolde(C2.getSolde()+montant);
+		try {*/
+			bdd.executeUpdate("update comptes set solde = '"+(C1.getSolde()-montant)+"' where numCpt ='"+C1.getNumCpt()+"'");
+			bdd.executeUpdate("update comptes set solde = '"+(C2.getSolde()+montant)+"' where numCpt ='"+C2.getNumCpt()+"'");
+		    return 0;
+/*		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	return C1.hashCode();
+	}
+*/
+}
 }

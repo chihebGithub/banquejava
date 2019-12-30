@@ -38,6 +38,7 @@ public class ListeCompte extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 IntCompteDao stubcpt= new CompteImpl();
 	     List <Compte> l2 = stubcpt.getAllComptes();
+	     System.out.println(l2);
 	     double sum = 0;
 	  for (Compte c: l2) {
 		  sum+=c.getSolde();

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.banque.beans.Client;
 import com.banque.dao.ClientImpl;
+import com.banque.dao.CompteImpl;
+import com.banque.dao.IntCompteDao;
 import com.banque.dao.InterfaceClient;
 
 /**
@@ -49,16 +51,24 @@ public class LoginController extends HttpServlet {
 			Client C = new Client();
 			C.setEmail(request.getParameter("emailname"));
 			C.setPassword(request.getParameter("password"));
+			
 			System.out.println("pass +" + C.getPassword());
 			System.out.println(C.getEmail());
 		 if(stubclient.login(C))
-		 {
+		 { long cin =0;
+			 try {
+				 cin = stubclient.getClientByloginAndPassword(C.getEmail(), C.getPassword());
+				 System.out.println("cin : "+cin);
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			 HttpSession session = request.getSession();
 			 session.setAttribute("uname",request.getParameter("emailname"));
 			request.setAttribute("bean",C);
 			ServletContext context = getServletContext();
 			context.setAttribute("message", request.getParameter("emailname") );
-			
+			context.setAttribute("cin", cin );
 			try {
 				this.getServletContext().getRequestDispatcher( "/ajouterClient.jsp" ).forward( request, response );
 			} catch (ServletException e) {
@@ -84,6 +94,11 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session=request.getSession();  
+        session.invalidate(); 
+        this.getServletContext().getRequestDispatcher( "/login.jsp" ).forward( request, response );
+		
 		
 	}
 	

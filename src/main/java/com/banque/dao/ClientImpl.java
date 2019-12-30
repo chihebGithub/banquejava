@@ -151,4 +151,25 @@ public class ClientImpl implements InterfaceClient  {
 	
 	}
 
+	@Override
+	public long getClientByloginAndPassword(String email, String Password) throws ClassNotFoundException {
+		String[] nomTAbleau = {"password" , "codClt"};
+		try {
+			rs=bdd.fcSelectComand(nomTAbleau, "Client","email = '"+email+"' and password = '" + Password+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			if (rs.next()) {
+				return rs.getLong("codClt") ;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return 0;
+	}
+
 }

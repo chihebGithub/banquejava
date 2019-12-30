@@ -10,6 +10,7 @@ public interface InterfaceClient {
 	public void addClient(Client C);
 	public boolean login(Client C);
 	public Client getClientByNumero(String c) throws ClassNotFoundException;
+	public long getClientByloginAndPassword(String login , String Password) throws ClassNotFoundException;
 	public void deleteClient(long id);
 	public boolean emailExists(String email);
 

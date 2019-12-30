@@ -58,6 +58,24 @@
   	<description></description>
   	<servlet-class>com.banque.controllers.ListeCompte</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>TestController</servlet-name>
+  	<display-name>TestController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.TestController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListeCompteClientController</servlet-name>
+  	<display-name>ListeCompteClientController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.ListeCompteClientController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VirementController</servlet-name>
+  	<display-name>VirementController</display-name>
+  	<description></description>
+  	<servlet-class>com.banque.controllers.VirementController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ClientController</servlet-name>
   	<url-pattern>/ClientController</url-pattern>
@@ -93,5 +111,17 @@
   <servlet-mapping>
   	<servlet-name>ListeCompte</servlet-name>
   	<url-pattern>/ListeCompte</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TestController</servlet-name>
+  	<url-pattern>/TestController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListeCompteClientController</servlet-name>
+  	<url-pattern>/ListeCompteClientController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VirementController</servlet-name>
+  	<url-pattern>/VirementController</url-pattern>
   </servlet-mapping>
 </web-app>
