@@ -17,7 +17,7 @@ $(document).ready(function() {
 	             */
 	         
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			url : 'chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{name : n},

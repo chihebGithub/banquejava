@@ -145,7 +145,8 @@
         	    }
          	    
          		$.ajax({
-    				url : '/BanqueApplication/CompteController',
+    				//url : '/BanqueApplication/CompteController',
+    				url : 'https://chiheb.azurewebsites.net/CompteController',
     				type:'POST',
     				dataType: "json",
     			    data :{name : $("#cin").val()},
@@ -168,7 +169,8 @@
         	  
         	  $("#emailname").blur(function () {
           	 	$.ajax({
-     				url : '/BanqueApplication/CompteController',
+     				//url : '/BanqueApplication/CompteController',
+     				url : 'https://chiheb.azurewebsites.net/CompteController',
      				type:'POST',
      				dataType: "json",
      			    data :{email : $("#emailname").val()},
@@ -192,7 +194,8 @@
           	 
         	  $("#email").blur(function () {
             	 	$.ajax({
-       				url : '/BanqueApplication/CompteController',
+       				//url : '/BanqueApplication/CompteController',
+       				url : 'https://chiheb.azurewebsites.net/CompteController',
        				type:'POST',
        				dataType: "json",
        			    data :{email : $("#email").val()},
