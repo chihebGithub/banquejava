@@ -16,11 +16,11 @@ String Type ="";
 if(bean.getCodNatCpt()==100){Type= "Compte Epargne" ;}
 if(bean.getCodNatCpt()==110){Type= "Compte Courant" ;}
 %> 
-<%--
+<%
 HttpSession masession = request.getSession();
 String login = (String)masession.getAttribute("uname");
 if(login==null){response.sendRedirect("login.jsp");  }
---%>
+%>
 
 <!DOCTYPE html>
 <html>
@@ -71,8 +71,11 @@ if(login==null){response.sendRedirect("login.jsp");  }
 			<form class="form-inline my-2 my-lg-0">
 				<input class="form-control mr-sm-2" type="search"
 					placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				
 			</form>
+			<form class="form-inline my-2 my-lg-0" action="LoginController" method="post">
+				<button class="btn btn-info btn-lg my-2 my-sm-0" type="submit">Déconnexion</button>
+			   </form>
 		</div>
 	</nav>
 
@@ -86,6 +89,8 @@ if(login==null){response.sendRedirect("login.jsp");  }
 						<a href="Versement.jsp" class="btn btn-link">Versement</a> <a
 							href="Retrait.jsp" class="btn btn-link">Retrait</a> <a
 							href="Virement.jsp" class="btn btn-link">Virement</a>
+							
+							  <a href="ListeCompteClientController" class="btn btn-link">Comsulter mes Comptes</a>
 					</div>
 				</div>
 				<div class="card bg-light mb-3" style="max-width: 18rem;">

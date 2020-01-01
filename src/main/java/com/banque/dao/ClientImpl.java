@@ -112,8 +112,8 @@ public class ClientImpl implements InterfaceClient  {
 	
 		String[] nomTAbleau = {"password" , "email"};
 		try {
-			rs=bdd.fcSelectComand(nomTAbleau, "Client","email = '"+C.getEmail()+"' and password = '" + C.getPassword()+"'");
-		} catch (SQLException e) {
+			//rs=bdd.fcSelectComand(nomTAbleau, "Client","email = '"+C.getEmail()+"' and password = '" + C.getPassword()+"'");
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

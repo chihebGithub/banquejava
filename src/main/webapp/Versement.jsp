@@ -180,13 +180,13 @@ if(login==null){response.sendRedirect("login.jsp");  }
 $(document).ready(function() {
 	  $("#numCpt").keypress(function (e) {
  	     //if the letter is not digit then don't type anything
- 	     if ((e.which != 8 && e.which != 0) && (e.which < 48 || (e.which > 57))) {
+ 	     if ((e.which != 8 && e.which != 0) && e.which < 48 || (e.which > 57)) {
  	               return false;
  	    }
  	   });
 	  $("#montant").keypress(function (e) {
 		 
-		   if ((e.which != 46 && e.which > 31)&& (e.which < 48 || e.which > 57))
+		   if ((e.which != 46 && e.which > 31)&& (e.which < 48) || (e.which > 57))
 		      return false;
 	 	   });
 	
@@ -195,7 +195,8 @@ $(document).ready(function() {
 		var n = $("#numCpt").val();
 	    
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+		//	url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{numCpt : n},

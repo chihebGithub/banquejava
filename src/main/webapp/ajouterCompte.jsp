@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*, javax.servlet.*"%>
-<% 
+<%--
 HttpSession masession = request.getSession();
 String login = (String)masession.getAttribute("uname");
 if(login==null){response.sendRedirect("login.jsp");  }
-%>
+--%>
 
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@ if(login==null){response.sendRedirect("login.jsp");  }
 
 			</ul>
 			<ul class="mx-auto text-light">
-				<% out.print("hello "+login); %>
+				<%-- out.print("hello "+login); --%>
 
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
@@ -175,7 +175,7 @@ if(login==null){response.sendRedirect("login.jsp");  }
 $(document).ready(function() {
     $("#cin").keypress(function (e) {
 	     //if the letter is not digit then display error and don't type anything
-	     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+	     if ((e.which != 8 && e.which != 0) && (e.which < 48) || (e.which > 57)) {
 	               return false;
 	    }
 	     
@@ -195,7 +195,7 @@ $(document).ready(function() {
 	             
 	         
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{name : n},

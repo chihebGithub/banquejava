@@ -239,7 +239,8 @@ $(document).ready(function() {
 		var n = $("#numCpt").val();
 	    console.log($("#typeCpt").val());
 		$.ajax({
-			url : '/BanqueApplication/VirementController',
+			//url : '/BanqueApplication/VirementController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'GET',
 			dataType: "json",
 		    data :{type:$("#typeCpt").val(),
@@ -282,7 +283,8 @@ $(document).ready(function() {
 			var n = $("#numCpt1").val();
 		    console.log($("#typeCpt1").val());
 			$.ajax({
-				url : '/BanqueApplication/VirementController',
+				//url : '/BanqueApplication/VirementController',
+				url : 'https://chiheb.azurewebsites.net/CompteController',
 				type:'GET',
 				dataType: "json",
 			    data :{

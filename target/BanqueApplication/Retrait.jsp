@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*, javax.servlet.*"%>
-<%--
+<%
 HttpSession masession = request.getSession();
 String login = (String)masession.getAttribute("uname");
 if(login==null){response.sendRedirect("login.jsp");  }
---%>
+%>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@ if(login==null){response.sendRedirect("login.jsp");  }
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Banque Web Site</a>
+		<a class="navbar-brand" href="ajouterClient.jsp">Banque Web Site</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -57,8 +57,10 @@ if(login==null){response.sendRedirect("login.jsp");  }
 			<form class="form-inline my-2 my-lg-0">
 				<input class="form-control mr-sm-2" type="search"
 					placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
+			<form class="form-inline my-2 my-lg-0" action="LoginController" method="post">
+				<button class="btn btn-info btn-lg my-2 my-sm-0" type="submit">Déconnexion</button>
+			   </form>
 		</div>
 	</nav>
 
@@ -73,6 +75,7 @@ if(login==null){response.sendRedirect("login.jsp");  }
 							href="Retrait.jsp" class="btn btn-link">Retrait</a> <a
 							href="Virement.jsp" class="btn btn-link">Virement</a>
 							<a href="ListeCompte" class="btn btn-link">Lister les Comptes</a>
+							  <a href="ListeCompteClientController" class="btn btn-link">Comsulter mes Comptes</a>
 					</div>
 				</div>
 				<div class="card bg-light mb-3" style="max-width: 18rem;">
@@ -205,7 +208,8 @@ $(document).ready(function() {
 		var n = $("#numCpt").val();
 	    
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{TypeCpt:$("#typeCpt").val(),
@@ -248,7 +252,8 @@ $(document).ready(function() {
 		var n = $("#cin").val();
 		var num = $("#numCpt").val();
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{numCpt :num,
@@ -279,7 +284,8 @@ $(document).ready(function() {
 		console.log("montant :" + n);
 		var num = $("#numCpt").val();
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{numCpt :num,

@@ -208,7 +208,8 @@ $(document).ready(function() {
 		var n = $("#numCpt").val();
 	    
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{TypeCpt:$("#typeCpt").val(),
@@ -251,7 +252,8 @@ $(document).ready(function() {
 		var n = $("#cin").val();
 		var num = $("#numCpt").val();
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{numCpt :num,
@@ -282,7 +284,8 @@ $(document).ready(function() {
 		console.log("montant :" + n);
 		var num = $("#numCpt").val();
 		$.ajax({
-			url : '/BanqueApplication/CompteController',
+			//url : '/BanqueApplication/CompteController',
+			url : 'https://chiheb.azurewebsites.net/CompteController',
 			type:'POST',
 			dataType: "json",
 		    data :{numCpt :num,
